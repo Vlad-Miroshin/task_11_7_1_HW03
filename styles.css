@@ -1,8 +1,8 @@
 :root {
     --main-font-family: "Roboto", sans-serif;
     --main-font-size: 16px;
-    --main-font-color: #ffffffc2;
-    --main-color-gray: #636b6f;
+    --main-font-color: #414446;
+    --main-color-gray: #414446;
     --main-color-white: #dbdbdd;
 }
 
@@ -16,7 +16,7 @@
 body {
     min-height: 100vh;
     color: var(--main-font-color);
-    background: linear-gradient(#343638, #141e30);
+    background: linear-gradient(#f7f6f1, #bebebd);
     background-size: cover;
     background-position: center;
     font-size: 16px;
@@ -60,13 +60,14 @@ main h2 {
     min-width: 500px;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .3);
 }
 
 .content-table thead th {
     background-color: #009879;
     color: var(--main-color-white);
     text-align: center;
+    font-weight: 500;
 }
 
 .content-table th, 
@@ -89,9 +90,17 @@ main h2 {
 }
 
 .first-column {
+    padding: 6px 8px;
     background-color: #009879;
     color: var(--main-color-white);
+    font-weight: 500;
 }
+
+.value-diff {
+    background-color: #f5a884;
+    font-weight: 500;
+}
+
 
 
 .footer {

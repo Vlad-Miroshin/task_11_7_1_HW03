@@ -31,9 +31,9 @@
                     <tr>
                         <th>A</th>
                         <th>B</th>
-                        <th>! A</th>
-                        <th>A || B</th>
-                        <th>A && B</th>
+                        <th>!A</th>
+                        <th>A | B</th>
+                        <th>A & B</th>
                         <th>A xor B</th>
                     </tr>
                 </thead>
@@ -44,8 +44,8 @@
                         $b = $item[1];
                     ?>
                     <tr>
-                        <td><?= $a; ?></td>
-                        <td><?= $b; ?></td>
+                        <td class="first-column"><?= $a; ?></td>
+                        <td class="first-column"><?= $b; ?></td>
                         <td><?= (int)!$a; ?></td>
                         <td><?= $a | $b; ?></td>
                         <td><?= $a & $b; ?></td>
@@ -55,7 +55,6 @@
                 </tbody>
             </table>
 
-            <h2>Задание 2. Таблица сравнения</h2>
             <?php 
                 $ab = [
                     [true, "true"],
@@ -68,6 +67,48 @@
                     ["php", '"php"'],
                 ];
             ?>
+
+            <h2>Задание 2. Гибкое сравнение (==)</h2>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <?php foreach($ab as $item): 
+                            $caption = $item[1];
+                        ?>
+                        <th><?= $caption; ?></th>
+                        <?php endforeach; ?>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach($ab as $item): 
+                        $val_1 = $item[0];
+                        $caption = $item[1];
+                    ?>
+                    <tr>
+                        <td class="first-column"><?= $caption; ?></td>
+                        <?php foreach($ab as $item): 
+                            $val_2 = $item[0];
+
+                            $res_1 = $val_1 == $val_2;
+                            $res_2 = $val_1 === $val_2;
+                        
+                            if ($res_1 === $res_2):
+                        ?>
+                        <td><?= (int)$res_1; ?></td>
+                        <?php else: ?>
+                        <td class="value-diff"><?= (int)$res_1; ?></td>
+                        <?php 
+                            endif;
+                            endforeach; 
+                        ?>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+
+            <h2>Жёсткое сравнение (===)</h2>
             <table class="content-table">
                 <thead>
                     <tr>
@@ -83,24 +124,34 @@
 
                 <tbody>
                     <?php foreach($ab as $item): 
-                            $value = $item[0];
+                            $val_1 = $item[0];
                             $caption = $item[1];
                     ?>
                     <tr>
                         <td class="first-column"><?= $caption; ?></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <?php foreach($ab as $item): 
+                            $val_2 = $item[0];
+
+                            $res_1 = $val_1 === $val_2;
+                            $res_2 = $val_1 == $val_2;
+                        
+                            if ($res_1 === $res_2):
+                        ?>                            
+                        <td><?= (int)$res_1; ?></td>
+                        <?php else: ?>
+                        <td class="value-diff"><?= (int)$res_1; ?></td>
+                        <?php endif; ?>
+
+                        <?php endforeach; ?>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
 
+            <p><span class="value-diff">Цветом</span> 
+            выделена разница между гибким и жёстким сравнением.
+            </p>
+            
         </div>
 
         <div class="footer">
