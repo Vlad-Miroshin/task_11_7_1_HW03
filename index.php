@@ -10,8 +10,25 @@
     <title>Задание 11.7.1 — Таблицы истинности и сравнения (HW-03)</title>
 </head>
 <body>
+    <header>
+        <h1>Задание 11.7.1 — Таблицы истинности и сравнения (HW-03)</h1>
+    </header>
     <?php 
-        echo 'Welcome to PHP';
+        echo 'Welcome to PHP and enjoy!';
     ?>
+
+    <main>
+        <div class="card-list">
+
+        </div>
+
+        <div class="footer">
+            <div class="copyright">
+                &copy;&nbsp;<a href="https://github.com/Vlad-Miroshin">Владислав Мирошин</a>, 2024. Поток PHPPRO_22 <a href="https://skillfactory.ru/">Skillfactory</a>.
+            </div>
+        </div>
+
+    </main>
+
 </body>
 </html>

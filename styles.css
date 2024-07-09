@@ -16,9 +16,49 @@
 
 body {
     min-height: 100vh;
-    background-color: #fff;
+    color: var(--main-font-color);
+    background: linear-gradient(#343638, #141e30);
     background-size: cover;
     background-position: center;
     font-size: 16px;
     line-height: 1.7;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7rem;
+    width: 100%;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--main-font-color);
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer {
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.copyright {
+    margin-top: 7rem;
+    font-size: .75rem;
+    color: var(--main-color-gray);
 }
