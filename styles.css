@@ -54,13 +54,14 @@ main h2 {
 
 .content-table {
     background-color: var(--main-color-white);
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
     margin: 25px 0;
     font-size: .9em;
     min-width: 500px;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+    border-spacing: 1px;
 }
 
 .content-table thead th {
@@ -68,22 +69,24 @@ main h2 {
     color: var(--main-color-white);
     text-align: center;
     font-weight: 500;
+    width: 50px;
 }
 
 .content-table th, 
 .content-table tr {
-    padding: 12px 15px;
+    padding: 12px 10px;
     color: var(--main-color-gray);
     text-align: center;
 }
 
 .content-table tbody tr {
-    border-bottom: 1px solid var(--main-color-gray);
+    border: 1px solid var(--main-color-gray);
+    background-color: #fafae1;
 }
 
-.content-table tbody tr:nth-of-type(even) {
+/* .content-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
-}
+} */
 
 .content-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
@@ -100,6 +103,8 @@ main h2 {
     background-color: #f5a884;
     font-weight: 500;
 }
+
+
 
 
 
